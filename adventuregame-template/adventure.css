@@ -1,0 +1,55 @@
+body{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  color: white;
+  height: 100%;
+}
+#game-container{
+  margin: 0 auto;
+  width: 1000px;
+  height: 700px;
+}
+#title {
+  text-align: center;
+  font-size: 50px;
+}
+#game-buttons {
+  text-align: center;
+}
+#description {
+  font-size: 20px;
+  width: 30%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0 auto;
+  text-align: center;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+}
+button{
+  background-color: red;
+  width: 333px;
+  height: 50px;
+}
+#inventory {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 20px;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+}
+#inventory img {
+  height: 100px;
+  margin: auto;
+  border-color: black;
+  border-style: solid;
+}
+#mainImageDiv{
+  text-align: center;
+}
+#mainImage {
+  height: 400px;
+}
