@@ -59,6 +59,23 @@ function levelEen() {
   button3.style.display = "";
   button1.removeEventListener("click",kist);
   button1.removeEventListener("click",unlockKist);
+  levelEenButtonCheck();
+}
+function levelEenButtonCheck(){
+sleutel();
+backpack();
+  function sleutel() {
+
+  if (rugtas["sleutel"] === true) {
+      button1.style.display = "none";
+  }
+}
+  function backpack() {
+
+  if (rugtas["papiertje"] === true) {
+    button3.style.display = "none";
+  }
+}
 }
 function levelEenOptieEen() {
   console.log("optie1");
@@ -82,7 +99,7 @@ function kist() {
 
 }
 function unlockKist() {
-  var keyword = prompt();
+  var keyword = prompt("╔═══╗   ╔═══╗  ╔═══╗   ╔═══╗   ╔══╗\n       ║   ║ ○     ║ ○       ║ ○           ║\n╚═══╝   ╚═       ╚═══╝    ╚═══╝   ╚══╝");
   if (keyword === "droom") {
     rugtas["sleutel"] = true;
     button1.style.display = "none";
@@ -94,16 +111,14 @@ function unlockKist() {
 function levelEenOptieTwee() {
   console.log("optie2");
   document.getElementById('title').innerHTML = "Level 1 - deur";
-  if (key != true) {
-
-  }
-
+  doorCheck();
 }
 function levelEenOptieDrie() {
   document.getElementById("description").innerHTML = "<p>je pakt de rugtas op en doet hem open. in de rugzak zit een papiertje met wat lijnen circles getallen en letters erop geschreven en niks anders. neem je de rugtas mee?</p>";
   removeButton(3);
   refreshbtn(1,"click",levelEenOptieEen);
   refreshbtn(2,"click",levelEenOptieTwee);
+  button1.style.display = ""
   button2.style.display = ""
   mainImage.setAttribute("src","images/backpack.jpg");
   document.getElementById("button1").innerHTML = "Ja";
@@ -112,6 +127,11 @@ function levelEenOptieDrie() {
   document.getElementById("button2").innerHTML = "Nee";
   document.getElementById("button2").addEventListener("click", rugtasNee);
 }
+function doorCheck() {
+  if (rugtas["sleutel"]!= true) {
+    alert("De deur is op slot vind een manier om hem open te krijgen.")
+  }
+}
 function rugtasNee() {
   addButton(3);
   refreshbtn(1,"click",rugtasJa);
@@ -119,7 +139,7 @@ function rugtasNee() {
   levelEen();
 }
 function rugtasJa() {
-  rugtas[0] = "papiertje";
+  rugtas["papiertje"] = true;
   alert("je hebt de rugzak opgepakt met het papiertje erin.");
   refreshbtn(1,"click",rugtasJa);
   refreshbtn(2,"click",rugtasNee);
